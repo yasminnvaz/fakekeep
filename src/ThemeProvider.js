@@ -1,17 +1,18 @@
-import React, { createContext, useState } from 'react'
-import * as themes from './styles/theme'
-import { ThemeProvider } from 'styled-components'
-import App from './App'
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { createContext } from 'react';
+import themes from './styles/themes'
+import App from './App';
 
-const { darkTheme } = themes
+const DEFAULT_THEME = 'darkTheme';
 
 export const ThemeProviderContext = createContext({
     setTheme: () => { },
-    theme: darkTheme
-})
+    theme: DEFAULT_THEME,
+});
 
 const Providers = () => {
-    const [theme, setTheme] = useState(darkTheme)
+    const [theme, setTheme] = useState(DEFAULT_THEME);
 
     return (
         <ThemeProviderContext.Provider value={{ setTheme, theme }}>
@@ -19,7 +20,7 @@ const Providers = () => {
                 <App />
             </ThemeProvider>
         </ThemeProviderContext.Provider>
-    )
-}
+    );
+};
 
-export default Providers
+export default Providers;

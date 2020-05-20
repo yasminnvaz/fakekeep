@@ -4,9 +4,8 @@ import { Platform, Text, TouchableNativeFeedback, TouchableOpacity, View, } from
 
 const Touchable = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity
 
-
 const CustomButtonView = styled(View)`
-    /* background-color: ${({ theme }) => theme.PRIMARY_BUTTON_COLOR}; */
+    background-color: ${({ theme }) => theme.PRIMARY_BUTTON_COLOR};
     width: auto;
     display: flex;
     justify-content: center;
@@ -15,7 +14,7 @@ const CustomButtonView = styled(View)`
 `
 
 const CustomButtonText = styled(Text)`
-  /* color: ${props => props.theme.PRIMARY_BUTTON_COLOR}; */
+  color: ${({ theme }) => theme.PRIMARY_TEXT_COLOR};
   font-size: 15px;
   font-style: normal;
   font-weight: bold;
@@ -23,7 +22,7 @@ const CustomButtonText = styled(Text)`
 `;
 
 export default ({ onPress, text }) => {
-    
+
     return (
         <Touchable onPress={onPress}>
             <CustomButtonView>
