@@ -1,17 +1,16 @@
 import 'react-native-gesture-handler';
 
-import React from 'react'
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import React from 'react';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import MainTabs from './routes/MainTabs';
-import StatusBar from './components/StatusBar'
+import StatusBar from './components/StatusBar';
 
 export default () => {
-
   return (
-    <SafeAreaProvider >
+    <SafeAreaProvider>
       <StatusBar />
       <MainTabs />
     </SafeAreaProvider>
-  )
+  );
 };
