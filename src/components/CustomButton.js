@@ -11,18 +11,20 @@ const CustomButtonView = styled(View)`
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    border-radius: 10px;
+    height: 60px;
 `
 
 const CustomButtonText = styled(Text)`
   color: ${({ theme }) => theme.PRIMARY_TEXT_COLOR};
-  font-size: 15px;
+  font-size: 17px;
   font-style: normal;
   font-weight: bold;
   padding: 10px;
-`;
+  text-transform: uppercase;
+`
 
 export default ({ onPress, text }) => {
-
     return (
         <Touchable onPress={onPress}>
             <CustomButtonView>

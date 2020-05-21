@@ -1,17 +1,17 @@
-import React, { useContext } from 'react'
-import { ThemeProviderContext } from './ThemeProvider'
-import { SafeAreaView } from 'react-navigation';
+import 'react-native-gesture-handler';
 
-import CustomButton from './components/CustomButton'
+import React, { useContext } from 'react'
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+import { ThemeProviderContext } from './ThemeProvider'
+import MainStack from './routes/MainStack'
 
 export default () => {
   const { theme } = useContext(ThemeProviderContext);
 
   return (
-    <>
-      <SafeAreaView>
-        <CustomButton text={"Start"} />
-      </SafeAreaView>
-    </>
+    <SafeAreaProvider>
+      <MainStack />
+    </SafeAreaProvider>
   )
 };
