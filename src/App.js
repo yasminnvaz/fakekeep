@@ -1,17 +1,17 @@
 import 'react-native-gesture-handler';
 
-import React, { useContext } from 'react'
+import React from 'react'
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { ThemeProviderContext } from './ThemeProvider'
-import MainStack from './routes/MainStack'
+import MainTabs from './routes/MainTabs';
+import StatusBar from './components/StatusBar'
 
 export default () => {
-  const { theme } = useContext(ThemeProviderContext);
 
   return (
-    <SafeAreaProvider>
-      <MainStack />
+    <SafeAreaProvider >
+      <StatusBar />
+      <MainTabs />
     </SafeAreaProvider>
   )
 };

@@ -20,6 +20,7 @@
 		9E8F8FCB44849C4C4C612A63 /* libPods-FakeKeep.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD513DCEBEA04B3F327955C8 /* libPods-FakeKeep.a */; };
 		A1ED260B4946958281A526EC /* libPods-FakeKeep-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA1D62C1C8B9D90491E0CCD /* libPods-FakeKeep-tvOSTests.a */; };
 		B7FEF40285FE2DA924C27372 /* libPods-FakeKeep-FakeKeepTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4E7D6672366DD64255E4E4 /* libPods-FakeKeep-FakeKeepTests.a */; };
+		97180E08864E4088B92A0705 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F282589960D94E8B8C49F514 /* Ionicons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		F31207002D152426B193DECC /* Pods-FakeKeep-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeKeep-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-FakeKeep-tvOS/Pods-FakeKeep-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FB43D8D7BFBC4EEC73A90C1B /* Pods-FakeKeep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeKeep.release.xcconfig"; path = "Target Support Files/Pods-FakeKeep/Pods-FakeKeep.release.xcconfig"; sourceTree = "<group>"; };
 		FD513DCEBEA04B3F327955C8 /* libPods-FakeKeep.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FakeKeep.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F282589960D94E8B8C49F514 /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-ionicons/fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				5E93146B03A21F41E95BDA1C /* Pods */,
+				3D5B0CC8851E483EAE24B774 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -197,6 +200,15 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		3D5B0CC8851E483EAE24B774 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				F282589960D94E8B8C49F514 /* Ionicons.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -340,6 +352,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				97180E08864E4088B92A0705 /* Ionicons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
