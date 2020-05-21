@@ -5,7 +5,7 @@ import { Platform, Text, TouchableNativeFeedback, TouchableOpacity, View, } from
 const Touchable = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity
 
 const CustomButtonView = styled(View)`
-    background-color: ${({ theme }) => theme.PRIMARY_BUTTON_COLOR};
+    background-color: ${({ theme }) => theme.PRIMARY_BUTTON_BACKGROUND_COLOR};
     width: auto;
     display: flex;
     justify-content: center;
@@ -16,7 +16,7 @@ const CustomButtonView = styled(View)`
 `
 
 const CustomButtonText = styled(Text)`
-  color: ${({ theme }) => theme.PRIMARY_TEXT_COLOR};
+  color: ${({ theme }) => theme.PRIMARY_BUTTON_COLOR};
   font-size: 17px;
   font-style: normal;
   font-weight: bold;
