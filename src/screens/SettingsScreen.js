@@ -1,43 +1,50 @@
-import React, { useContext, useState } from 'react'
-import { Text, View, Dimensions } from 'react-native'
-import { Switch } from 'react-native-gesture-handler'
+import React, {useContext, useState} from 'react';
+import {Text, View, Dimensions} from 'react-native';
+import {Switch} from 'react-native-gesture-handler';
 
-import { ThemeProviderContext } from '../ThemeProvider'
-import ViewContainer from '../containers/ViewContainer'
-import styled from 'styled-components'
+import {ThemeProviderContext} from '../ThemeProvider';
+import ViewContainer from '../components/ViewContainer';
+import styled from 'styled-components';
+import PageTitle from '../components/typography/PageTitle';
+
+const SettingsContainer = styled(View)`
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: ${({theme}) => theme.SECONDARY_BACKGROUND_COLOR};
+`;
 
 const SettingsRow = styled(View)`
-    background-color: ${({ theme }) => theme.SECONDARY_BACKGROUND_COLOR};
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 20px;
-    border-radius: 10px;
-`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+`;
 
 const SettingsText = styled(Text)`
-    padding: 0;
-    color: ${({ theme }) => theme.PRIMARY_TEXT_COLOR};
-`
+  padding: 0;
+  color: ${({theme}) => theme.PRIMARY_TEXT_COLOR};
+`;
 
 export default () => {
+  const {setTheme, theme} = useContext(ThemeProviderContext);
+  const [isEnabled, setIsEnabled] = useState(true);
 
-    const { setTheme, theme } = useContext(ThemeProviderContext);
-    const [isEnabled, setIsEnabled] = useState(true);
+  const changeTheme = () => {
+    setTheme(theme === 'darkTheme' ? 'lightTheme' : 'darkTheme');
+    setIsEnabled((previousState) => !previousState);
+  };
 
-    const changeTheme = () => {
-        setTheme(theme === 'darkTheme' ? 'lightTheme' : 'darkTheme');
-        setIsEnabled(previousState => !previousState)
-    };
+  const label = theme === 'lightTheme' ? 'Light mode' : 'Dark mode';
 
-    const label = theme === 'lightTheme' ? 'Modo Claro' : 'Modo Escuro';
-
-    return (
-        <ViewContainer>
-            <SettingsRow>
-                <SettingsText>{label}</SettingsText>
-                <Switch onChange={changeTheme} value={isEnabled} />
-            </SettingsRow>
-        </ViewContainer>
-    );
-}
+  return (
+    <ViewContainer>
+      <PageTitle title={'Settings'} />
+      <SettingsContainer>
+        <SettingsRow>
+          <SettingsText>{label}</SettingsText>
+          <Switch onChange={changeTheme} value={isEnabled} />
+        </SettingsRow>
+      </SettingsContainer>
+    </ViewContainer>
+  );
+};
