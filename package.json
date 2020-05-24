@@ -6,10 +6,11 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "lint": "eslint ."
+    "test": "jest --verbose --coverage",
+    "test:watch": "jest --verbose --watch",
+    "test:coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.28",

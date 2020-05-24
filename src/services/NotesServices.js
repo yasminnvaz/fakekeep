@@ -9,5 +9,5 @@ export const getAllNotes = async (pagination) => {
 
 export const createNote = async ({title, content}) => {
   const note = {title: title, note: content};
-  const response = await Axios.post(URL_API, note);
+  await Axios.post(URL_API, note);
 };
