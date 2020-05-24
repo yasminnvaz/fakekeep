@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import {getAllNotes} from '../services/NotesServices';
 import ViewContainer from '../components/ViewContainer';
-import PageTitle from '../components/typography/PageTitle';
+import Header from '../components/Header';
 
 import Note from '../components/Note';
 
@@ -32,11 +32,12 @@ export default () => {
       await loadNotes();
     };
     getNotes();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <ViewContainer>
-      <PageTitle title={'Notes'} />
+      <Header title={'Notes'} />
       <NoteContainer>
         <FlatList
           data={notes}

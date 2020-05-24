@@ -1,11 +1,11 @@
 import React, {useContext, useState} from 'react';
-import {Text, View, Dimensions} from 'react-native';
+import {Text, View} from 'react-native';
 import {Switch} from 'react-native-gesture-handler';
 
 import {ThemeProviderContext} from '../ThemeProvider';
 import ViewContainer from '../components/ViewContainer';
 import styled from 'styled-components';
-import PageTitle from '../components/typography/PageTitle';
+import Header from '../components/Header';
 
 const SettingsContainer = styled(View)`
   margin-top: 20px;
@@ -38,7 +38,7 @@ export default () => {
 
   return (
     <ViewContainer>
-      <PageTitle title={'Settings'} />
+      <Header title={'Settings'} />
       <SettingsContainer>
         <SettingsRow>
           <SettingsText>{label}</SettingsText>

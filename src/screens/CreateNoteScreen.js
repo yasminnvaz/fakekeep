@@ -1,10 +1,10 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {View} from 'react-native';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 
-import PageTitle from '../components/typography/PageTitle';
+import Header from '../components/Header';
 import ViewContainer from '../components/ViewContainer';
 import Input from '../components/Input';
 import ErrorText from '../components/typography/ErrorText';
@@ -29,9 +29,8 @@ const CreateSchema = Yup.object().shape({
 const initialValues = {title: '', content: ''};
 
 export default ({navigation}) => {
-  
   const onSubmit = async (values) => {
-    const note = await createNote(values);
+    await createNote(values);
 
     navigation.reset({
       index: 1,
@@ -43,7 +42,7 @@ export default ({navigation}) => {
 
   return (
     <ViewContainer>
-      <PageTitle title="New note" />
+      <Header title="New note" />
       <FormContainer>
         <Formik
           validationSchema={CreateSchema}
@@ -57,6 +56,7 @@ export default ({navigation}) => {
                   onChangeText={handleChange('title')}
                   onBlur={() => setFieldTouched('title')}
                   value={values.title}
+                  // eslint-disable-next-line react-native/no-inline-styles
                   style={{fontSize: 18}}
                 />
                 {errors.title && <ErrorText>{errors.title}</ErrorText>}
