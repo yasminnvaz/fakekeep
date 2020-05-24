@@ -3,7 +3,7 @@ import {TextInput} from 'react-native';
 import styled, {ThemeContext} from 'styled-components';
 
 const CustomTextInput = styled(TextInput)`
-  color: #fff;
+  color: ${({theme}) => theme.INPUT_TEXT_COLOR};
   padding: 10px;
 `;
 
