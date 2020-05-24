@@ -30,4 +30,4 @@ const lightTheme = {
   BAR_STYLE: 'dark-content',
 };
 
-export default themes = {darkTheme, lightTheme};
+export default {darkTheme, lightTheme};
