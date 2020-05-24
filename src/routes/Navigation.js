@@ -47,7 +47,8 @@ export default () => {
     <NavigationContainer>
       <Tab.Navigator
         tabBarOptions={tabBarOptions}
-        screenOptions={screenOptions}>
+        screenOptions={screenOptions}
+        initialRouteName="Home">
         <Tab.Screen name="Home" component={NotesScreen} />
         <Tab.Screen name="New note" component={CreateNoteScreen} />
         <Tab.Screen name="Settings" component={SettingsScreen} />

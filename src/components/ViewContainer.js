@@ -7,6 +7,7 @@ const ViewContainer = styled(SafeAreaView)`
   flex: 1;
   padding-left: 24px;
   padding-right: 24px;
+  padding-bottom: 1px;
 `;
 
 export default ({children}) => {
